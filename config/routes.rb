@@ -1,6 +1,9 @@
 Pollster::Application.routes.draw do
   
-  root :to => 'static#home'
+  root :to => 'users#create'
+  
+  resources :polls
+  resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
