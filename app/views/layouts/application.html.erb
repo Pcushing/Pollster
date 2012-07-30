@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Pollster</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Pollster" %></title>
+    <%= csrf_meta_tags %>
 
-<%= yield %>
-
-</body>
+	<%= render :partial => 'layouts/shim' %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+	<%= render :partial => 'layouts/favicons' %>
+  <body>
+	<%= render :partial => 'layouts/navbar' %>
+    <div class="container-fluid">
+      <div class="row-fluid">
+		<%= render :partial => 'layouts/sidebar' %> <!-- Contains a span3 -->
+        <div class="span9">
+          <%= yield %>
+        </div>
+      </div><!--/row-->
+	  <%= render :partial => 'layouts/footer' %>
+    </div> <!-- /container -->
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
