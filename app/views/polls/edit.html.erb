@@ -7,7 +7,7 @@
   <%= form_for @poll.questions.new do |f| %>
     <div class="form-inline">
 	  <%= f.hidden_field :poll_id, :value => @poll.id %>
-      <%= f.text_field :text, :placeholder => 'What do you want to ask?' %>  <%= f.submit :class => 'btn btn-primary' %>
+      <%= f.text_field :text, :placeholder => 'What do you want to ask?' %>  <%= f.submit :class => 'btn btn-primary btn-large' %>
     </div>
   <% end %>
 

@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(params[:question])
     @question.save
-    flash[:message] = "New question added, chief."
+    flash[:message] = "Nice question, chief."
     redirect_to edit_obscured_path(@question.poll.edit_url)
   end
   
