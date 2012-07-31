@@ -1,6 +1,13 @@
 Pollster::Application.routes.draw do
   
-  root :to => 'static#home'
+  root :to => 'polls#new'
+  match '/polls/e/:edit_url', :to => 'polls#edit', :as => 'edit_obscured'
+  match '/answers', :to => 'answers#index', :as => 'answer_questions'
+  
+  resources :polls 
+  resources :questions
+  resources :answers
+    
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

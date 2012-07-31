@@ -10,12 +10,13 @@
 	<%= render :partial => 'layouts/shim' %>
     <%= stylesheet_link_tag "application", :media => "all" %>
 	<%= render :partial => 'layouts/favicons' %>
+</head>
   <body>
 	<%= render :partial => 'layouts/navbar' %>
     <div class="container-fluid">
       <div class="row-fluid">
-		<%= render :partial => 'layouts/sidebar' %> <!-- Contains a span3 -->
-        <div class="span9">
+        <div class="span12">
+		  <%= render :partial => 'layouts/flashes' %>
           <%= yield %>
         </div>
       </div><!--/row-->

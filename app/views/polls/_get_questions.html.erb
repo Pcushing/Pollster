@@ -1,0 +1,7 @@
+<% poll.questions.each do |question| %>
+	<% if !question.text.nil? %>
+		<%= render :partial => 'questions/display', :locals => {:question => question, :poll => poll }%>
+	<% end %>
+<% end %>
+
+

@@ -1,0 +1,5 @@
+<%= form_for poll do |f| %>
+  <div class="form-inline">
+    <%= f.text_field :name, :placeholder => 'Name your poll' %>  <%= f.submit :class => 'btn btn-primary' %>
+  </div>
+<% end %>

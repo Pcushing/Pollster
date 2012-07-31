@@ -1,0 +1,20 @@
+<div class="hero-unit">
+  <h1>Oh, hey.  You're back.</h1>
+  <h3><%= link_to "Share this url", poll_path(@poll.id)  %></h3>
+
+  <%= render :partial => 'polls/form', :locals => {:poll => @poll} %>
+
+  <%= form_for @poll.questions.new do |f| %>
+    <div class="form-inline">
+	  <%= f.hidden_field :poll_id, :value => @poll.id %>
+      <%= f.text_field :text, :placeholder => 'What do you want to ask?' %>  <%= f.submit :class => 'btn btn-primary' %>
+    </div>
+  <% end %>
+
+  <% @poll.questions.each do |question| %>
+	<% if !question.text.nil? %>
+	  <%= render :partial => 'questions/display', :locals => {:question => question, :poll => @poll }%>
+	<% end %>
+  <% end %>
+</div>
+

@@ -1,0 +1,9 @@
+<!-- Needs to be reconciled with _form -->
+<div class="hero-unit">
+	<h1>Sure, let's update that question of yours</h1>
+	<%= form_for @question do |f| %>
+	  <div class="form-inline">
+	    <%= f.text_field :text, :placeholder => 'What do you want to ask?' %>  <%= f.submit :class => 'btn btn-primary' %>
+	  </div>
+	<% end %>
+</div>
