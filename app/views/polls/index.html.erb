@@ -1,0 +1,7 @@
+<div class="hero-unit">
+  <ul>	
+    <% @polls.each do |poll| %>
+	  <li><%= link_to poll.name, poll_path(poll.id) %></li>
+    <% end %>
+  </ul>
+</div>

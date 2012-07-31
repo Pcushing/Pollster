@@ -1,4 +1,7 @@
 class PollsController < ApplicationController
+  def index
+    @polls = Poll.all
+  end
   
   def show
     # if params[:id].is_a?String
@@ -28,8 +31,8 @@ class PollsController < ApplicationController
     @poll.edit_url  = SecureRandom.base64(10).gsub(/\W/,'')
 
     if @poll.save
-      flash[:message] = "Look at you just creating polls like a boss.  You might want this http://#{request.host}:#{request.port.to_s}/polls/e/#{@poll.edit_url} for editing and this http://#{request.host}:#{request.port.to_s}#{poll_path(@poll.id)}."
-      redirect_to edit_obscured_path(@poll.edit_url)
+      flash[:message] = "Look at you just creating polls like a boss."
+      redirect_to poll_path(@poll.id)
     else
       flash[:error] = "Well that sucks. Something went wrong."
       render root_path

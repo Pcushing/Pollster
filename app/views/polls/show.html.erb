@@ -1,5 +1,11 @@
 <div class="hero-unit">
   <h1><%= @poll.name %></h1>
-  <h3>You know you want to... take me.</h3>
+  <h3>You can <%= link_to "edit this poll", edit_obscured_path(@poll.edit_url)  %> or <%= link_to "share this poll", new_response_path(@poll.name) %></h3>
+
+  <% @poll.questions.each do |question| %>
+	<% if !question.text.nil? %>
+	  <%= render :partial => 'questions/display', :locals => {:question => question, :poll => @poll }%>
+	<% end %>
+  <% end %>
 </div>
 

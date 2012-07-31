@@ -1,7 +1,8 @@
 <div class="questions">
 	<%= question.text %>
-	<div><input type="text" class="question" id="input01"></div>
-
+	<% question.answers.each do |answer| %>
+		<p>Response: <%= answer.text %></p>
+	<% end %>
 	<%= render :partial => 'questions/obscured_controls', :locals => {:question => question} %>
 </div>
 

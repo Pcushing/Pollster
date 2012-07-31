@@ -1,7 +1,0 @@
-This is working if we can see the cookie here <%= @user.session_cookie %>
-
-<h1>You look like you want to make a poll.</h1>
-<%= form_for @user.polls.new do |f| %>
-  <%= f.text_field :name %>
-<% end %>
-

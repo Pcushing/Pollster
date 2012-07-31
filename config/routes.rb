@@ -1,7 +1,9 @@
 Pollster::Application.routes.draw do
   
   root :to => 'polls#new'
+  #This could've been more consistent
   match '/polls/e/:edit_url', :to => 'polls#edit', :as => 'edit_obscured'
+  match '/p/:name', :to => 'responses#new', :as => 'new_response'
   match '/answers', :to => 'answers#index', :as => 'answer_questions'
   
   resources :polls, :questions, :answers, :responses

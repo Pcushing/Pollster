@@ -1,6 +1,6 @@
 <div class="hero-unit">
   <h1>Oh, hey.  You're back.</h1>
-  <h3><%= link_to "Share this url", poll_path(@poll.id)  %></h3>
+  <h3>You can <%= link_to "view this poll", poll_path(@poll.id)  %> or <%= link_to "share this poll", new_response_path(@poll.name) %></h3>
 
   <%= render :partial => 'polls/form', :locals => {:poll => @poll} %>
 

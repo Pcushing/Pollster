@@ -1,0 +1,15 @@
+<div class="hero-unit">
+	<h1><%= @poll.name %></h1>
+	<%= form_for @poll.responses.new do |f| %>
+		<%= f.hidden_field :poll_id, :value => @poll.id %>
+		<p>
+		  <% @poll.questions.each do |question| %>
+			<%= label_tag question.text %>
+			<%= text_field_tag question.id %>
+		  <% end %>
+		</p>
+		<%= f.submit %>
+	<% end %>
+</div>
+
+<%= debug session[:polls_taken] %>
