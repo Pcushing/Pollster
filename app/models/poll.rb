@@ -4,6 +4,5 @@ class Poll < ActiveRecord::Base
   validates :edit_url, :uniqueness => true, :presence => true
   
   has_many :questions, :dependent => :destroy
-  accepts_nested_attributes_for :questions, :reject_if => lambda { |a| a[:text].blank? }, :allow_destroy => true
-  
+  has_many :responses;  
 end

@@ -2,8 +2,10 @@
 
 one:
   question_id: 1
+  response_id: 1
   text: MyString
 
 two:
   question_id: 1
+  response_id: 1
   text: MyString

@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20120730223935) do
+ActiveRecord::Schema.define(:version => 20120731054906) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
+    t.integer  "response_id"
     t.string   "text"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -33,14 +33,12 @@ ActiveRecord::Schema.define(:version => 20120730223935) do
     t.string   "text"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-=======
-ActiveRecord::Schema.define(:version => 20120730182944) do
+  end
 
-  create_table "users", :force => true do |t|
-    t.string   "session_cookie"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
->>>>>>> 73aa389f088b97aaff36bd377265631fd15c52dd
+  create_table "responses", :force => true do |t|
+    t.integer  "poll_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
