@@ -16,6 +16,13 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'simplecov'
+  gem 'faker'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'fabrication'
+  gem 'guard-rspec'
+  # gem 'launchy' save_and_open_page shows where you're at in midst of spec
 end
 
 group :production do

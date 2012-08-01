@@ -4,11 +4,7 @@ class PollsController < ApplicationController
   end
   
   def show
-    # if params[:id].is_a?String
-      # @poll = Poll.find_by_edit_url(params[:id]) 
-    # else
-      @poll = Poll.find(params[:id]) 
-    # end
+    @poll = Poll.find(params[:id]) 
   end
   
   def edit
@@ -28,8 +24,6 @@ class PollsController < ApplicationController
   
   def create
     @poll = Poll.new(params[:poll])
-    @poll.edit_url  = SecureRandom.base64(10).gsub(/\W/,'')
-
     if @poll.save
       flash[:message] = "Look at you just creating polls like a boss."
       redirect_to poll_path(@poll.id)
