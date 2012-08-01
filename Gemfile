@@ -22,6 +22,7 @@ group :development, :test do
   gem 'capybara'
   gem 'fabrication'
   gem 'guard-rspec'
+  gem 'shoulda-matchers'
   # gem 'launchy' save_and_open_page shows where you're at in midst of spec
 end
 
